@@ -26,7 +26,8 @@ namespace DemoSDK
         private void axTrueConfCallX1_OnServerConnected(object sender, AxTrueConf_CallXLib._ITrueConfCallXEvents_OnServerConnectedEvent e) //notification about success connection to server
         {
             MessageBox.Show("Connect to server ok!");
-            axTrueConfCallX1.login(TrueConf_Id, TrueConf_Password); //login on TrueConf Server with login and password
+            if(!String.IsNullOrEmpty(TrueConf_Id) && !String.IsNullOrEmpty(TrueConf_Password))
+                axTrueConfCallX1.login(TrueConf_Id, TrueConf_Password); //login on TrueConf Server with login and password
         }
         private void axTrueConfCallX1_OnXLoginOk(object sender, EventArgs e) //notification about successed login
         {
