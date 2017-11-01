@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SB Admin - Start Bootstrap Template</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" onload="start()">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" id="blank_link" href="#">Website with SDK Demo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      </ul>
+    </div>
+  </nav>
+
+  <div class="content-wrapper">
+    <div style="margin-left:3%">
+      <div>      
+        <div>
+          <label for="user_id">Type user id:</label>
+        </div>
+        <input type="text" id="user_id" placeholder="user id" />
+        <input type="button" style="background-color:rgba(0, 128, 0, 0.616);" id="submit_call" value="Call user" />
+        <input type="button" style="background-color:rgba(255, 0, 0, 0.616);" id="hungup_call" value="End call" />      
+      </div>
+      <br/>
+      <!-- Include callx component to page, classid is identify TrueConf SDK,
+        width and height is specify the size of activex component -->
+      <object id="activex" classid="clsid:27EF4BA2-4500-4839-B88A-F2F4744FE56A" width="800px" height="450px"></object>
+  </div>
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © TrueConf 2017</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/manage-sdk.js"></script> <!-- Include js file that manage the activex component -->
+    <script src="js/sb-admin.min.js"></script>
+    <script src="js/sb-admin.js"></script>
+  </div>
+</body>
+</html>
