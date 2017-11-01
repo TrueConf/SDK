@@ -19,12 +19,9 @@ namespace DemoSDK
         private bool started = false; //flag means that TrueConf CallX started
         public Form1()
         {
-            InitializeComponent(); Auth auth = new Auth(); //open authorization dialog after form is initialized
-            auth.ShowDialog(); //open authorization dialog after form is initialized
-            if (started) //flag means that TrueConf CallX started
-            {
-                axTrueConfCallX1.connectToServer(ServerName); //connect to TrueConf Server
-            }
+            InitializeComponent();
+            Auth auth = new Auth(); //open authorization dialog after form is initialized
+            auth.ShowDialog(); //open authorization dialog after form is initialized            
         }
         private void axTrueConfCallX1_OnServerConnected(object sender, AxTrueConf_CallXLib._ITrueConfCallXEvents_OnServerConnectedEvent e) //notification about success connection to server
         {
@@ -51,6 +48,10 @@ namespace DemoSDK
         private void axTrueConfCallX1_OnXAfterStart(object sender, EventArgs e)
         {
             started = true; //flag means TrueConf CallX started
+            if(ServerName != null)
+            {
+                axTrueConfCallX1.connectToServer(ServerName); //after start connect to the server/service
+            }
         }
         private void comboBoxCameras_SelectedIndexChanged(object sender, EventArgs e)
         {
