@@ -19,9 +19,9 @@ namespace DemoSDK
         private bool started = false; //flag means that TrueConf CallX started
         public Form1()
         {
-            InitializeComponent();
             Auth auth = new Auth(); //open authorization dialog after form is initialized
-            auth.ShowDialog(); //open authorization dialog after form is initialized            
+            auth.ShowDialog(); //open authorization dialog after form is initialized        
+            InitializeComponent();                
         }
         private void axTrueConfCallX1_OnServerConnected(object sender, AxTrueConf_CallXLib._ITrueConfCallXEvents_OnServerConnectedEvent e) //notification about success connection to server
         {
