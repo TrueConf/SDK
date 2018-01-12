@@ -12,11 +12,11 @@ namespace FileTransferWindowsSDKDemo
 {
     public partial class LoginForm : Form
     {
-        public static string status;
+        public static string status; //a status field that retrieves data from MainForm
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); //closing form
         }
 
         public LoginForm()
@@ -26,28 +26,22 @@ namespace FileTransferWindowsSDKDemo
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(txtLogin.Text) && !String.IsNullOrEmpty(txtPassword.Text))
+            if(!String.IsNullOrEmpty(txtLogin.Text) && !String.IsNullOrEmpty(txtPassword.Text)) //if login and password fields aren't empty
             {
-                MainForm mainForm = new MainForm(String.IsNullOrEmpty(txtServer.Text)? "" : txtServer.Text, txtLogin.Text, txtPassword.Text);
+                MainForm mainForm = new MainForm(String.IsNullOrEmpty(txtServer.Text)? "" : txtServer.Text, txtLogin.Text, txtPassword.Text); //opening the MainForm and passing the server, login and password to the MainForm
                 
-                txtPassword.Clear();
-                labelError.Text = "";
+                txtPassword.Clear(); //clearing password field
+                labelError.Text = ""; //clearing label with error message
 
-                mainForm.StartPosition = FormStartPosition.CenterScreen;
-                Hide();
-                mainForm.FormClosing += (s, ee) =>
+                mainForm.StartPosition = FormStartPosition.CenterScreen; //setting MainForm start position
+                Hide(); //hide this form
+                mainForm.FormClosing += (s, ee) => //when MainForm closing
                 {
-                    this.Show();
-                    labelError.Text = LoginForm.status;
+                    this.Show(); //showing this form
+                    labelError.Text = LoginForm.status; //updating error message from status field
                 };
-                mainForm.ShowDialog();
+                mainForm.ShowDialog(); //showing MainForm
             }
-        }
-
-        private void txtPassword_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-                btnLogin_Click(sender, e);
-        }
+        }        
     }
 }

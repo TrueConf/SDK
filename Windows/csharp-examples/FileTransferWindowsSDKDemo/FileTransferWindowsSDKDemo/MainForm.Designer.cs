@@ -33,6 +33,7 @@
             this.listViewFiles = new System.Windows.Forms.ListView();
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.peerId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.path = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnOpenSelectedFile = new System.Windows.Forms.Button();
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.lblPeerId = new System.Windows.Forms.Label();
@@ -46,12 +47,17 @@
             this.statusLblServer = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnChangeServer = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.path = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnUpdateFileList = new System.Windows.Forms.Button();
+            this.labelErrorOpenFile = new System.Windows.Forms.Label();
             fileId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.sdk)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // fileId
+            // 
+            fileId.DisplayIndex = 2;
+            fileId.Text = "Id";
             // 
             // listViewFiles
             // 
@@ -69,11 +75,6 @@
             this.listViewFiles.UseCompatibleStateImageBehavior = false;
             this.listViewFiles.View = System.Windows.Forms.View.Details;
             // 
-            // fileId
-            // 
-            fileId.DisplayIndex = 2;
-            fileId.Text = "Id";
-            // 
             // name
             // 
             this.name.DisplayIndex = 0;
@@ -83,6 +84,10 @@
             // 
             this.peerId.DisplayIndex = 1;
             this.peerId.Text = "Sender";
+            // 
+            // path
+            // 
+            this.path.Text = "Path";
             // 
             // btnOpenSelectedFile
             // 
@@ -192,10 +197,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // path
-            // 
-            this.path.Text = "Path";
-            // 
             // btnUpdateFileList
             // 
             this.btnUpdateFileList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -207,11 +208,22 @@
             this.btnUpdateFileList.UseVisualStyleBackColor = true;
             this.btnUpdateFileList.Click += new System.EventHandler(this.btnUpdateFileList_Click);
             // 
+            // labelErrorOpenFile
+            // 
+            this.labelErrorOpenFile.AutoSize = true;
+            this.labelErrorOpenFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelErrorOpenFile.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorOpenFile.Location = new System.Drawing.Point(397, 12);
+            this.labelErrorOpenFile.Name = "labelErrorOpenFile";
+            this.labelErrorOpenFile.Size = new System.Drawing.Size(0, 17);
+            this.labelErrorOpenFile.TabIndex = 9;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 575);
+            this.Controls.Add(this.labelErrorOpenFile);
             this.Controls.Add(this.btnUpdateFileList);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.sdk);
@@ -253,5 +265,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ColumnHeader path;
         private System.Windows.Forms.Button btnUpdateFileList;
+        private System.Windows.Forms.Label labelErrorOpenFile;
     }
 }
