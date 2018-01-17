@@ -125,8 +125,7 @@ namespace FileTransferWindowsSDKDemo
         {
             statusLblServer.Text = "Connected to " + server;
             statusLblConference.Text = "Not in conference";
-            btnChangeServer.Enabled = false;
-            sdk.login(id, password);
+            sdk.login(id, password); //login
         }
 
         private void Sdk_OnXError(object sender, AxTrueConf_CallXLib._ITrueConfCallXEvents_OnXErrorEvent e)
@@ -139,13 +138,13 @@ namespace FileTransferWindowsSDKDemo
         {
             if (!String.IsNullOrEmpty(txtFilePath.Text))
             {
-                if (statusLblConference.Text == "Not in conference" && !String.IsNullOrEmpty(txtPeerId.Text))
+                if (statusLblConference.Text == "Not in conference" && !String.IsNullOrEmpty(txtPeerId.Text)) //if not in conference and user id is not empty
                 {
-                    sdk.XFileSend(txtPeerId.Text, txtFilePath.Text, "*/*");
+                    sdk.XFileSend(txtPeerId.Text, txtFilePath.Text, "*/*"); //send file to user id
                 }
-                if (statusLblConference.Text == "In conference")
+                if (statusLblConference.Text == "In conference") //if in conference
                 {
-                    sdk.XFileSendToConference(txtFilePath.Text, "*/*");
+                    sdk.XFileSendToConference(txtFilePath.Text, "*/*"); //send file to conference
                 }
             }
         }
@@ -159,7 +158,7 @@ namespace FileTransferWindowsSDKDemo
         {
             try
             {
-                System.Diagnostics.Process.Start("explorer.exe", listViewFiles.SelectedItems[0].SubItems[3].Text);
+                System.Diagnostics.Process.Start("explorer.exe", listViewFiles.SelectedItems[0].SubItems[3].Text); //open in explorer selected received file
             }
             catch (Exception ex)
             {
