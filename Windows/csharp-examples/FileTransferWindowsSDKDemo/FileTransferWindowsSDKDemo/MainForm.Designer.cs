@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ColumnHeader fileId;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.listViewFiles = new System.Windows.Forms.ListView();
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,20 +48,13 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnUpdateFileList = new System.Windows.Forms.Button();
             this.labelErrorOpenFile = new System.Windows.Forms.Label();
-            fileId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.sdk)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // fileId
-            // 
-            fileId.DisplayIndex = 2;
-            fileId.Text = "Id";
-            // 
             // listViewFiles
             // 
             this.listViewFiles.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            fileId,
             this.name,
             this.peerId,
             this.path});
@@ -77,12 +69,10 @@
             // 
             // name
             // 
-            this.name.DisplayIndex = 0;
             this.name.Text = "Name";
             // 
             // peerId
             // 
-            this.peerId.DisplayIndex = 1;
             this.peerId.Text = "Sender";
             // 
             // path

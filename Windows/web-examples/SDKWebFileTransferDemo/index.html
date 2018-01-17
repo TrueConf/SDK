@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>File transfer - Windows SDK Demo</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" onload="start()">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" id="blank_link" href="#">File transfer</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+	<div class="collapse navbar-collapse">      
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <div id="status" class="navbar-text">
+            No connection
+          </div>
+        </li>
+        <li style="margin-left:10px">
+          <div>
+            <button id="loginPage" class="btn btn-secondary text-center" data-toggle="collapse" data-target="#login">Login</button>
+          </div>
+        </li>
+      </ul>
+    </div>	
+  </nav>
+
+  <div class="content-wrapper">
+    <div style="margin-left:3%">
+      <br/>
+      <br/>
+      <br/>      
+      <div id="login" class="collapse">
+          <div class="card card-container">
+              <h3 class='login_title text-center'>Login</h3>
+              <hr>     
+              <div class="form-signin text-center">
+                  <span id="server" class="reauth-email"></span>
+                  <p class="input_title">Server name or host</p>
+                  <input type="text" id="inputServer" class="login_box" placeholder="server name or host..." autofocus>
+                  <p class="input_title">TrueConf ID</p>
+                  <input type="text" id="inputId" class="login_box" placeholder="TrueConf ID..." required>
+                  <p class="input_title">Password</p>
+                  <input type="password" id="inputPassword" class="login_box" placeholder="******" required>                  
+                  <br/>
+                  <br/>
+                  <button id="submitLogin" class="btn btn-lg btn-primary" type="submit">Login</button>
+              </div>
+          </div>
+        <br/>       
+      </div>
+    </div>
+    <div style="margin-left:3%"> 
+      <div class="row">
+        <div class="col-lg-4">
+            <!-- Include callx component to page, classid is identify TrueConf SDK,
+              width and height is specify the size of activex component -->
+            <object id="activex" classid="clsid:27EF4BA2-4500-4839-B88A-F2F4744FE56A" width="350px" height="200px"></object>
+            <br/>
+            <div class="card card-container text-center">
+              <br>
+              <div>
+                <label for="user_id">Type user id:</label> <p style="font-size:11px;">(or leave empty if you are in conference)</p>             
+                <input type="text" id="user_id" placeholder="user id" />
+              </div>
+              <div>
+                <label for="selectFile">Select file:</label>                
+                <input class="btn-file" type="file" id="selectFile" value="Select file" />
+              </div>
+              <div>
+                <br/>
+                <input class="btn btn-primary" type="button" id="sendFile" value="Send file" />     
+              </div> 
+            </div>             
+        </div>
+        <div class="col-lg-8">
+          <input type="button" id="updateList" value="🔃"/>
+          <h3>List of received files</h3>
+          <table class="table table-sm" style="font-size: 12px;">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">File name</th>
+                <th scope="col">Sender</th>
+                <th scope="col">File path</th>
+              </tr>
+            </thead>
+            <tbody id="listOfReceivedFiles">
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+  </div>
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © TrueConf 2017</small>
+        </div>
+      </div>
+    </footer>
+    <script src="js/manage-sdk.js"></script> <!-- Include js file that manage the activex component -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->    
+    <script src="js/sb-admin.min.js"></script>
+    <script src="js/sb-admin.js"></script>
+</body>
+</html>

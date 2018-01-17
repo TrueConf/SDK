@@ -111,7 +111,7 @@ namespace FileTransferWindowsSDKDemo
             dynamic data = Json.Decode(fileList); //convert JSON to dynamic value
             foreach(dynamic file in data.files)
             {
-                listViewFiles.Items.Add(new ListViewItem(new string[] { "" + file.id, file.fileName, file.peerId, file.downloadDir })); //add file info to list of received files: file id, file name, sender, path to file
+                listViewFiles.Items.Add(new ListViewItem(new string[] {file.fileName, file.peerId, file.downloadDir })); //add file info to list of received files: file id, file name, sender, path to file
             }
         }
 
