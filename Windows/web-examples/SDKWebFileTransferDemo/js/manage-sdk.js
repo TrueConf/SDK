@@ -23,6 +23,10 @@ function connectToAXEvent(o, etype, func) //func for add eventListener to active
   }
 }
 
+window.onbeforeunload = function(){
+	sdk.shutdown(); //close sdk component when windows close or reload
+}
+
 var updateListOfReceivedFiles = function (e) {
 	$("#listOfReceivedFiles").html(""); //clear list of received files
 	var data = JSON.parse(sdk.XGetFileTransferList()); //get and parse Json data about received files
