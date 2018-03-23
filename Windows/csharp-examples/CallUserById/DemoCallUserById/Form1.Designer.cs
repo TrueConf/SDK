@@ -41,7 +41,12 @@
             this.comboBoxMicrophones = new System.Windows.Forms.ComboBox();
             this.comboBoxCameras = new System.Windows.Forms.ComboBox();
             this.axTrueConfCallX1 = new AxTrueConf_CallXLib.AxTrueConfCallX();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLogin = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusServer = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusConference = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.axTrueConfCallX1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonEndCall
@@ -80,7 +85,7 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(525, 62);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(304, 23);
@@ -98,7 +103,7 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(525, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(304, 47);
@@ -108,7 +113,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(353, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 23);
@@ -118,7 +123,7 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(193, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(154, 23);
@@ -128,7 +133,7 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(26, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 23);
@@ -169,19 +174,45 @@
             this.axTrueConfCallX1.Location = new System.Drawing.Point(12, 62);
             this.axTrueConfCallX1.Name = "axTrueConfCallX1";
             this.axTrueConfCallX1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTrueConfCallX1.OcxState")));
-            this.axTrueConfCallX1.Size = new System.Drawing.Size(493, 388);
+            this.axTrueConfCallX1.Size = new System.Drawing.Size(506, 363);
             this.axTrueConfCallX1.TabIndex = 28;
-            this.axTrueConfCallX1.OnXAfterStart += new System.EventHandler(this.axTrueConfCallX1_OnXAfterStart);
-            this.axTrueConfCallX1.OnConferenceCreated += new AxTrueConf_CallXLib._ITrueConfCallXEvents_OnConferenceCreatedEventHandler(this.axTrueConfCallX1_OnConferenceCreated);
-            this.axTrueConfCallX1.OnServerConnected += new AxTrueConf_CallXLib._ITrueConfCallXEvents_OnServerConnectedEventHandler(this.axTrueConfCallX1_OnServerConnected);
-            this.axTrueConfCallX1.OnXLogin += new System.EventHandler(this.axTrueConfCallX1_OnXLoginOk);
-            this.axTrueConfCallX1.OnXLoginError += new AxTrueConf_CallXLib._ITrueConfCallXEvents_OnXLoginErrorEventHandler(this.axTrueConfCallX1_OnXLoginError);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLogin,
+            this.toolStripStatusServer,
+            this.toolStripStatusConference});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 440);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(854, 22);
+            this.statusStrip1.TabIndex = 29;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLogin
+            // 
+            this.toolStripStatusLogin.Name = "toolStripStatusLogin";
+            this.toolStripStatusLogin.Size = new System.Drawing.Size(71, 17);
+            this.toolStripStatusLogin.Text = "Login status";
+            // 
+            // toolStripStatusServer
+            // 
+            this.toolStripStatusServer.Name = "toolStripStatusServer";
+            this.toolStripStatusServer.Size = new System.Drawing.Size(73, 17);
+            this.toolStripStatusServer.Text = "Server status";
+            // 
+            // toolStripStatusConference
+            // 
+            this.toolStripStatusConference.Name = "toolStripStatusConference";
+            this.toolStripStatusConference.Size = new System.Drawing.Size(102, 17);
+            this.toolStripStatusConference.Text = "Conference status";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 462);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.axTrueConfCallX1);
             this.Controls.Add(this.buttonEndCall);
             this.Controls.Add(this.buttonCall);
@@ -197,6 +228,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.axTrueConfCallX1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +249,10 @@
         private System.Windows.Forms.ComboBox comboBoxMicrophones;
         private System.Windows.Forms.ComboBox comboBoxCameras;
         private AxTrueConf_CallXLib.AxTrueConfCallX axTrueConfCallX1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLogin;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusServer;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusConference;
     }
 }
 
