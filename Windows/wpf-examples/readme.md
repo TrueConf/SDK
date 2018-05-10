@@ -1,3 +1,4 @@
+
 # Getting Started with TrueConf SDK for Windows Samples
 
 To create your first video conferencing application based on these samples please install SDK library first:
@@ -28,4 +29,5 @@ To create your first video conferencing application based on these samples pleas
 	* Find and check the Windows.Forms library in the list.
 	* Find and check the WindowsFormsIntegration library in the list.
 	* Click Ok button.
+	
 Once done copy and paste contents of the samples from this directory to your project. That's it!
