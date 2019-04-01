@@ -1,4 +1,4 @@
-Getting Started with TrueConf SDK for Windows Samples
+# Getting Started with TrueConf SDK for Windows Samples
 
 First of all you need to install TrueConf SDK component to your system: run callx_setup.exe installer under administrator priveleges.
 
