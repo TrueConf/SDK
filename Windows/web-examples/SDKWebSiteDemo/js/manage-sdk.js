@@ -1,4 +1,5 @@
 var sdk; //activex component
+var server = "ru10.trueconf.net"; //server name or IP
 var id = "demo_sdk_user"; //trueconf id
 var password = "123456"; //trueconf password
 var isLogin = false; //login flag
@@ -44,7 +45,7 @@ function start() { //body onload listener
       sdk.XSetCameraByIndex(0); //select camera
       sdk.XSelectMicByIndex(0); //select microphone
       sdk.XSelectSpeakerByIndex(0); //select speakers
-      sdk.connectToServer(""); //connect to the server/service
+      sdk.connectToServer(server); //connect to the server/service
 	  $("#status").html("Connecting...");
     });
 

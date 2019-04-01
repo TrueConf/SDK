@@ -1,7 +1,7 @@
 var sdk; //activex component
 var id = "demo_sdk_user"; //trueconf id
 var password = "123456"; //trueconf password
-var server = "";
+var server = "ru10.trueconf.net"; //server name or IP
 var isLogin = false; //login flag
 var inConference = false; //busy flag
 var type = 0; //state : 

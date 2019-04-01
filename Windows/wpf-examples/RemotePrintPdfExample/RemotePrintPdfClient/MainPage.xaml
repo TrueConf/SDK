@@ -1,0 +1,54 @@
+﻿<Page x:Class="RemotePrintPdfClient.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Remote print pdf example">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="150*"  x:Name="columnTextBoxes"/>
+            <ColumnDefinition Width="320"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Label Margin="5,10,5,5" Grid.Column="0" Grid.Row="0" Content="Enter TrueConf ID" Width="150" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox  x:Name="txtCallID" ItemsSource="{Binding Abook, UpdateSourceTrigger=PropertyChanged}" Text="{Binding SelectedID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0" Margin="5,10,5,5" HorizontalContentAlignment="Left" IsEditable="True"/>
+
+        <Button x:Name="lblFile" Grid.Column="0" Margin="5,5,5,5" Grid.Row="1" Content="Choose file to send" Padding="5" Width="150" HorizontalContentAlignment="Center" Click="LblFile_Click"/>
+        <Label  x:Name="txtFile" Content="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" Margin="5,5,5,5" HorizontalContentAlignment="Center" ScrollViewer.CanContentScroll="True" VerticalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2">
+            <Button x:Name="btnCall" Content="CALL" Width="150" Margin="5,5,5,5" Padding="5" Click="BtnCall_Click"/>
+            <Button x:Name="btnRemotePrint" Content="PRINT REMOTE" Width="150" Margin="5,5,5,5" Padding="5" Click="BtnRemotePrint_Click"/>
+        </StackPanel>
+
+
+        <StackPanel Grid.Column="0" Grid.Row="3" VerticalAlignment="Center">
+            <Button x:Name="btnAddSlides" Grid.Column="0" Height="30" Content="Add slides" Margin="10,5,10,0" Click="BtnAddSlides_Click"/>
+            <Button x:Name="btnClearSlides" Grid.Column="0" Height="30" Content="Clear slides" Margin="10,5,10,10" Click="BtnClearSlides_Click"/>
+            <Button x:Name="btnStartSlideShow" Grid.Column="0" Height="30" Content="Start slideshow" Margin="10,5,10,0" Click="BtnStartSlideShow_Click"/>
+            <Button x:Name="btnNextSlide" Grid.Column="0" Height="30" Content="Next slide" Margin="10,5,10,0" Click="BtnNextSlide_Click"/>
+            <Button x:Name="btnPrevSlide" Grid.Column="0" Height="30" Content="Prev slide" Margin="10,5,10,0" Click="BtnPrevSlide_Click"/>
+            <Button x:Name="btnStopSlideShow" Grid.Column="0" Height="30" Content="Stop slideshow" Margin="10,5,10,0" Click="BtnStopSlideShow_Click"/>
+        </StackPanel>
+        <ListBox x:Name="listSlides" Grid.Column="1" Grid.Row="3" Margin="0,0,0,5"/>
+
+        <TextBlock x:Name="lblCallName" Grid.Column="2" Height="30" Text="{Binding PeerID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="300" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5,10,5,5" Grid.RowSpan="4"/>
+        <WindowsFormsHost Grid.Column="2" x:Name="sdkHost" Height="300" Width="300" Margin="10,10,10,10" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.RowSpan="4"/>
+        <TextBlock x:Name="lblCallTime" Grid.Column="2" Height="30" Text="{Binding CallTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="300" Margin="5,5,5,10" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextAlignment="Center" Grid.RowSpan="4"/>
+        <StatusBar Grid.ColumnSpan="3" Grid.Row="4" HorizontalContentAlignment="Right" VerticalContentAlignment="Center">
+            <TextBlock x:Name="txtStatus" Text="{Binding Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0" 
+                       ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Top" HorizontalAlignment="Left" >
+            </TextBlock>
+        </StatusBar>
+    </Grid>
+</Page>
