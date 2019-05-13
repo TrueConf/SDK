@@ -7,7 +7,7 @@
 
 ```python
 ...
-SERVER = '' # empty - connect to the TrueConf Online Cloud
+SERVER = '<server IP>'
 USER = '<trueconf id>'
 PASSWORD = '<password>'
 ...
