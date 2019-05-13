@@ -22,18 +22,11 @@ namespace DemoSDK
         {
             if (textBoxServer.Text != "" && textBoxLogin.Text != "" && textBoxPassword.Text != "")
             {
-                Form1.cancelAuth = false;
                 Form1.ServerName = textBoxServer.Text.ToString(); //send the server data to the main form
-                Form1.ID = textBoxLogin.Text.ToString(); //send the authorization data to the main form
-                Form1.Password = textBoxPassword.Text.ToString(); //send the authorization data to the main form
+                Form1.TrueConf_Id = textBoxLogin.Text.ToString(); //send the authorization data to the main form
+                Form1.TrueConf_Password = textBoxPassword.Text.ToString(); //send the authorization data to the main form
                 Close(); //close this form
             }
-        }
-
-        private void BtnCancel_Click(object sender, EventArgs e)
-        {
-            Form1.cancelAuth = true;
-            Close();
         }
     }
 }

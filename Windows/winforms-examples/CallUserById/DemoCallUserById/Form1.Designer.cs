@@ -29,27 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.buttonEndCall = new System.Windows.Forms.Button();
             this.buttonCall = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxTrueConfIdForCall = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxSpeakers = new System.Windows.Forms.ComboBox();
+            this.comboBoxMicrophones = new System.Windows.Forms.ComboBox();
+            this.comboBoxCameras = new System.Windows.Forms.ComboBox();
+            this.axTrueConfCallX1 = new AxTrueConf_CallXLib.AxTrueConfCallX();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLogin = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusServer = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusConference = new System.Windows.Forms.ToolStripStatusLabel();
-            this.axTrueConfCallX1 = new AxTrueConf_CallXLib.AxTrueConfCallX();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chooseCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chooseMicrophoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chooseSpreakersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axTrueConfCallX1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // buttonEndCall
+            // 
+            this.buttonEndCall.BackColor = System.Drawing.Color.Red;
+            this.buttonEndCall.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonEndCall.FlatAppearance.BorderSize = 2;
+            this.buttonEndCall.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.buttonEndCall.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonEndCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEndCall.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEndCall.Location = new System.Drawing.Point(680, 123);
+            this.buttonEndCall.Name = "buttonEndCall";
+            this.buttonEndCall.Size = new System.Drawing.Size(149, 36);
+            this.buttonEndCall.TabIndex = 27;
+            this.buttonEndCall.Text = "End call";
+            this.buttonEndCall.UseVisualStyleBackColor = false;
+            this.buttonEndCall.Click += new System.EventHandler(this.buttonEndCall_Click);
             // 
             // buttonCall
             // 
@@ -59,12 +74,12 @@
             this.buttonCall.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen;
             this.buttonCall.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
             this.buttonCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCall.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCall.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCall.Location = new System.Drawing.Point(525, 123);
             this.buttonCall.Name = "buttonCall";
-            this.buttonCall.Size = new System.Drawing.Size(304, 51);
+            this.buttonCall.Size = new System.Drawing.Size(149, 36);
             this.buttonCall.TabIndex = 25;
-            this.buttonCall.Text = "📞";
+            this.buttonCall.Text = "Call";
             this.buttonCall.UseVisualStyleBackColor = false;
             this.buttonCall.Click += new System.EventHandler(this.buttonCall_Click);
             // 
@@ -96,15 +111,81 @@
             this.label4.Text = "Call the User:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(353, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 23);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Choose speakers:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(193, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 23);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Choose microphone:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(26, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 23);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Choose camera:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBoxSpeakers
+            // 
+            this.comboBoxSpeakers.FormattingEnabled = true;
+            this.comboBoxSpeakers.Location = new System.Drawing.Point(353, 35);
+            this.comboBoxSpeakers.Name = "comboBoxSpeakers";
+            this.comboBoxSpeakers.Size = new System.Drawing.Size(152, 21);
+            this.comboBoxSpeakers.TabIndex = 19;
+            this.comboBoxSpeakers.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeakers_SelectedIndexChanged);
+            // 
+            // comboBoxMicrophones
+            // 
+            this.comboBoxMicrophones.FormattingEnabled = true;
+            this.comboBoxMicrophones.Location = new System.Drawing.Point(193, 35);
+            this.comboBoxMicrophones.Name = "comboBoxMicrophones";
+            this.comboBoxMicrophones.Size = new System.Drawing.Size(154, 21);
+            this.comboBoxMicrophones.TabIndex = 18;
+            this.comboBoxMicrophones.SelectedIndexChanged += new System.EventHandler(this.comboBoxMicrophones_SelectedIndexChanged);
+            // 
+            // comboBoxCameras
+            // 
+            this.comboBoxCameras.FormattingEnabled = true;
+            this.comboBoxCameras.Location = new System.Drawing.Point(26, 35);
+            this.comboBoxCameras.Name = "comboBoxCameras";
+            this.comboBoxCameras.Size = new System.Drawing.Size(161, 21);
+            this.comboBoxCameras.TabIndex = 17;
+            this.comboBoxCameras.SelectedIndexChanged += new System.EventHandler(this.comboBoxCameras_SelectedIndexChanged);
+            // 
+            // axTrueConfCallX1
+            // 
+            this.axTrueConfCallX1.Enabled = true;
+            this.axTrueConfCallX1.Location = new System.Drawing.Point(12, 62);
+            this.axTrueConfCallX1.Name = "axTrueConfCallX1";
+            this.axTrueConfCallX1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTrueConfCallX1.OcxState")));
+            this.axTrueConfCallX1.Size = new System.Drawing.Size(506, 363);
+            this.axTrueConfCallX1.TabIndex = 28;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLogin,
             this.toolStripStatusServer,
             this.toolStripStatusConference});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 432);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 440);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(848, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(854, 22);
             this.statusStrip1.TabIndex = 29;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -126,123 +207,52 @@
             this.toolStripStatusConference.Size = new System.Drawing.Size(102, 17);
             this.toolStripStatusConference.Text = "Conference status";
             // 
-            // axTrueConfCallX1
-            // 
-            this.axTrueConfCallX1.Enabled = true;
-            this.axTrueConfCallX1.Location = new System.Drawing.Point(12, 39);
-            this.axTrueConfCallX1.Name = "axTrueConfCallX1";
-            this.axTrueConfCallX1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTrueConfCallX1.OcxState")));
-            this.axTrueConfCallX1.Size = new System.Drawing.Size(507, 375);
-            this.axTrueConfCallX1.TabIndex = 30;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.settingsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(848, 24);
-            this.menuStrip1.TabIndex = 31;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loginToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // loginToolStripMenuItem
-            // 
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.loginToolStripMenuItem.Text = "Login ➔";
-            this.loginToolStripMenuItem.Click += new System.EventHandler(this.LoginToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chooseCameraToolStripMenuItem,
-            this.chooseMicrophoneToolStripMenuItem,
-            this.chooseSpreakersToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // chooseCameraToolStripMenuItem
-            // 
-            this.chooseCameraToolStripMenuItem.Name = "chooseCameraToolStripMenuItem";
-            this.chooseCameraToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.chooseCameraToolStripMenuItem.Text = "Choose camera 🎥";
-            this.chooseCameraToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ChooseCameraToolStripMenuItem_DropDownItemClicked);
-            // 
-            // chooseMicrophoneToolStripMenuItem
-            // 
-            this.chooseMicrophoneToolStripMenuItem.Name = "chooseMicrophoneToolStripMenuItem";
-            this.chooseMicrophoneToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.chooseMicrophoneToolStripMenuItem.Text = "Choose microphone 🎤";
-            this.chooseMicrophoneToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ChooseMicrophoneToolStripMenuItem_DropDownItemClicked);
-            // 
-            // chooseSpreakersToolStripMenuItem
-            // 
-            this.chooseSpreakersToolStripMenuItem.Name = "chooseSpreakersToolStripMenuItem";
-            this.chooseSpreakersToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.chooseSpreakersToolStripMenuItem.Text = "Choose spreakers 🎧";
-            this.chooseSpreakersToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ChooseSpreakersToolStripMenuItem_DropDownItemClicked);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 454);
-            this.Controls.Add(this.axTrueConfCallX1);
+            this.ClientSize = new System.Drawing.Size(854, 462);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.axTrueConfCallX1);
+            this.Controls.Add(this.buttonEndCall);
             this.Controls.Add(this.buttonCall);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxTrueConfIdForCall);
             this.Controls.Add(this.label4);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBoxSpeakers);
+            this.Controls.Add(this.comboBoxMicrophones);
+            this.Controls.Add(this.comboBoxCameras);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.axTrueConfCallX1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axTrueConfCallX1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buttonEndCall;
         private System.Windows.Forms.Button buttonCall;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxTrueConfIdForCall;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxSpeakers;
+        private System.Windows.Forms.ComboBox comboBoxMicrophones;
+        private System.Windows.Forms.ComboBox comboBoxCameras;
+        private AxTrueConf_CallXLib.AxTrueConfCallX axTrueConfCallX1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLogin;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusServer;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusConference;
-        private AxTrueConf_CallXLib.AxTrueConfCallX axTrueConfCallX1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chooseCameraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chooseMicrophoneToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chooseSpreakersToolStripMenuItem;
     }
 }
 
