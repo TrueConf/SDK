@@ -8,7 +8,7 @@ import sys
 TITLE = "CallX Python Example: accept any calls"
 TrueConfCallX_Class = '{27EF4BA2-4500-4839-B88A-F2F4744FE56A}'
 
-SERVER = '' # empty - connect to TrueConf Online cloud
+SERVER = '<server IP>'
 USER = '<trueconf id>'
 PASSWORD = '<password>'
 
