@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="492.769" Width="738.361" ResizeMode="NoResize">
+    <Grid Margin="0,0,-64.8,-19.8">
+
+
+        <!--element for show the TrueConf SDK control-->
+        <WindowsFormsHost HorizontalAlignment="Left" Height="295" Margin="60,23,0,0" VerticalAlignment="Top" Width="596" Name="tcHost" Grid.ColumnSpan="2"/>
+        <Button x:Name="button_Call" Content="Call to user" HorizontalAlignment="Left" Margin="68,365,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.5,0.5" Click="Button_Click_Call"/>
+        <Button x:Name="button_Left" Content="LEFT" HorizontalAlignment="Left" Height="20" Margin="236,386,0,0" VerticalAlignment="Top" Width="96" Click="Button_Click_Left"/>
+        <Button x:Name="button_Right" Content="RIGHT" HorizontalAlignment="Left" Height="20" Margin="444,387,0,0" VerticalAlignment="Top" Width="87" Click="Button_Click_Right"/>
+        <Button x:Name="button_Down" Content="DOWN" HorizontalAlignment="Left" Height="20" Margin="340,399,0,0" VerticalAlignment="Top" Width="82" RenderTransformOrigin="-3.731,0.996" Click="Button_Click_Down"/>
+        <Button x:Name="button_Up" Content="UP" HorizontalAlignment="Left" Height="20" Margin="340,358,0,0" VerticalAlignment="Top" Width="82" Click="Button_Click_Up"/>
+        <Button x:Name="button_ZoomOut" Content="Zoom Out" HorizontalAlignment="Left" Height="20" Margin="553,391,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click_ZoomOut"/>
+        <Button x:Name="button_ZoomIn" Content="ZOOM In" HorizontalAlignment="Left" Height="20" Margin="553,358,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click_ZoomIn"/>
+        <Label x:Name="labelFecc" Content="FECC / PTZ Remote control" HorizontalAlignment="Left" Height="35" Margin="181,329,0,0" VerticalAlignment="Top" Width="173" Grid.ColumnSpan="2"/>
+        <Label x:Name="labelInfo" Content="Info" HorizontalAlignment="Left" Height="23" Margin="97,430,0,0" VerticalAlignment="Top" Width="604"/>
+    </Grid>
+</Window>

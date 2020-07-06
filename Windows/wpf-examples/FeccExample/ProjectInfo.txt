@@ -1,0 +1,53 @@
+    INFORMATION ABOUT THIS PROJECT
+
+'WindowsFormsControlLibrary' -  Project for creating a dynamic library that can be used in the app.
+'WpfApp' - Two apps with a user interface
+    'WpfApp\WpfApp' -  Main application (Client 1)
+    'WpfApp\WpfApp2'-  Main application (Client 2)
+    Client 1 has the ability to call client 2 and remotely control their camera
+
+    
+    APPLICATION ( CLIENT 1 ) SETTINGS
+Put the file with the application settings (config.ini) in the executable folder
+This file must contain the application settings
+    * 'server' - server to connect to
+    * 'user' -   login inforation
+    * 'password' - login inforation
+    * 'call_to' - ID of the client-2 that the call will be made to
+    * 'camera_id' - ID of the camera used by the client-1 (or -1, if no camera)
+    
+    APPLICATION ( CLIENT 2 ) SETTINGS
+Put the file with the application settings (config.ini) in the executable folder
+This file must contain the application settings
+    * 'server' - server to connect to
+    * 'user' -   login inforation
+    * 'password' - login inforation
+    * 'camera_id' - ID of the camera used by the client-2 (or -1, if no camera)    
+
+
+HOW THE APPS WORK
+- Start application-2
+    The app connects to the server, passes the login procedure, and initializes the camera being used.
+    You should see the image from the required camera.
+    You should see 'login success' message.
+    
+- Start application-1
+    The app connects to the server, passes the login procedure, and initializes the camera being used.
+    You should see the image from the required camera.
+    You should see 'login success' message.
+    You should see 'Call to user' button.
+- Press 'Call to user' button    
+    Client-1 establishes a connection with client-2 (Call operation) & requests access to camera control
+    If camera control is possible (which is used by the Client-2) , 
+        you should see the buttons "Up","Down","Left","Right","Focus in","Focus out"
+- Press "Up","Down","Left","Right","Focus in","Focus out" button     
+    The camera (which is used by the Client-2) must move one step
+
+
+THE INNER WORKINGS
+- After the conference starts, Client-1 execute command 'GetFECCControl()' To request camera control
+- Client-2 receives an event 'OnFECCRequest()' and allows camera control (command 'FECCAccept()')
+- Client-1 receives an event 'OnFECCControl()'
+  One of the parameters for this event is the interface used to control the remote camera.
+  
+
